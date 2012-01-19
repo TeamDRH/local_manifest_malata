@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <remote name="gh_local"
+            fetch="git://github.com/" />
+    <project name="TeamDRH/vendor_TeamDRH" path="vendor/TeamDRH" remote="gh_local" revision="ics" />
+    <project name="TeamDRH/vendor_malata_smba1002" path="vendor/malata/smba1002" remote="gh_local" revision="ics" />
+</manifest>

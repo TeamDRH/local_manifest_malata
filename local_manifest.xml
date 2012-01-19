@@ -4,4 +4,7 @@
             fetch="git://github.com/" />
     <project name="TeamDRH/vendor_TeamDRH" path="vendor/TeamDRH" remote="gh_local" revision="ics" />
     <project name="TeamDRH/vendor_malata_smba1002" path="vendor/malata/smba1002" remote="gh_local" revision="ics" />
+    <project name="CyanogenMod/android_external_busybox" path="external/busybox" remote="gh_local" revision="ics" />
+    <project name="CyanogenMod/android_packages_apps_Superuser" path="packages/apps/Superuser" remote="gh_local" revision="ics" />
+    <project name="CyanogenMod/android_system_su" path="system/su" remote="gh_local" revision="ics" />
 </manifest>

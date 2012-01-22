@@ -24,8 +24,19 @@ After sync is complete (this will take a while), pull the patches repo:
 
 $ git clone git://github.com/TeamDRH/ics_patches.git
 
-Follow the README in the ics_patches directory to install patches, then
-set up the build environment:
+Follow the README in the ics_patches directory to install patches. The
+following is an example only. The actual commands will be based on the 
+patch file and directory.
+
+    $ cd "PROJECT DIR"
+    $ patch -p1 < "PATCH FILE"
+    $ cd "WORKING_DIRECTORY"
+
+Copy the certificates needed to build Superuser:
+
+$ cp ics_patches/superuser.* build/target/product/security/
+
+Set up the build environment:
 
 $ . build/envsetup.sh
 

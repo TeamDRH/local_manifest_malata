@@ -1,0 +1,46 @@
+########################## Building TeamDRH Roms ##############################
+
+##### Set Up Android Source Tree #####
+
+Initialize your local Android source tree by following the instructions at:
+
+http://source.android.com/source/downloading.html
+
+The TeamDRH repos are currently set up to work with the 4.0.3 source branch.
+To select this branch when you do your repo init, use the following cmd.
+
+$ repo init -u https://android.googlesource.com/platform/manifest -b android-4.0.3_r1
+
+Next, pull in the local manifest that will add the TeamDRH repos:
+
+$ git clone git://github.com/TeamDRH/local_manifest_malata.git
+$ cp local_manifest_malata/local_manifest.xml .repo
+
+Then sync to pull the remote repos to your local source tree:
+
+$ repo sync
+
+After sync is complete (this will take a while), pull the patches repo:
+
+$ git clone git://github.com/TeamDRH/ics_patches.git
+
+Follow the README in the ics_patches directory to install patches, then
+set up the build environment:
+
+$ . build/envsetup.sh
+
+Then choose the lunch target:
+
+$ lunch TeamDRH_smba1002-eng
+
+Now do a make otapackage to build the ROM ( "-jN" selects "N" number of threads to run)
+
+$ make -j4 otapackage
+
+Once again, this will take a while, when you have a successful build, you can
+run squisher to do some final setup, optimization, and cleanup.
+
+$ ./vendor/TeamDRH/tools/squisher
+
+This completes the build process. The final script will output the ROM location.
+
